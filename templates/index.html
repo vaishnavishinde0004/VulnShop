@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>VulnShop - Everything You Need</title>
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Custom CSS -->
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVIGATION BAR
+========================= -->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+    <div class="container">
+
+        <!-- Brand -->
+
+        <a
+            class="navbar-brand fw-bold"
+            href="{{ url_for('home') }}"
+        >
+            🛒 VulnShop
+        </a>
+
+
+        <!-- Mobile Menu Button -->
+
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarMenu"
+        >
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+
+        <!-- Navigation Links -->
+
+        <div
+            class="collapse navbar-collapse"
+            id="navbarMenu"
+        >
+
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link active"
+                        href="{{ url_for('home') }}"
+                    >
+                        Home
+                    </a>
+
+                </li>
+
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link"
+                        href="#products"
+                    >
+                        Products
+                    </a>
+
+                </li>
+
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link"
+                        href="#about"
+                    >
+                        About
+                    </a>
+
+                </li>
+
+            </ul>
+
+
+            <!-- Authentication Buttons -->
+
+            <div class="d-flex">
+
+                <a
+                    href="{{ url_for('login') }}"
+                    class="btn btn-outline-light me-2"
+                >
+                    Login
+                </a>
+
+
+                <a
+                    href="{{ url_for('register') }}"
+                    class="btn btn-primary"
+                >
+                    Register
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =========================
+     HERO SECTION
+========================= -->
+
+<section class="hero">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <!-- Hero Text -->
+
+            <div class="col-lg-7">
+
+                <span class="badge bg-primary mb-3">
+                    Welcome to VulnShop
+                </span>
+
+
+                <h1 class="display-3 fw-bold">
+
+                    Everything You Need.
+
+                </h1>
+
+
+                <p class="lead mt-3">
+
+                    Discover quality products at affordable prices,
+                    all in one place.
+
+                </p>
+
+
+                <div class="mt-4">
+
+                    <a
+                        href="#products"
+                        class="btn btn-primary btn-lg me-2"
+                    >
+                        Explore Products
+                    </a>
+
+
+                    <a
+                        href="{{ url_for('register') }}"
+                        class="btn btn-outline-light btn-lg"
+                    >
+                        Create Account
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Hero Visual -->
+
+            <div class="col-lg-5 text-center mt-5 mt-lg-0">
+
+                <div class="hero-icon">
+
+                    🛍️
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     FEATURES
+========================= -->
+
+<section class="py-5 bg-white">
+
+    <div class="container">
+
+        <div class="row text-center g-4">
+
+            <div class="col-md-4">
+
+                <div class="feature-box">
+
+                    <div class="feature-icon">
+                        🚚
+                    </div>
+
+                    <h5 class="mt-3">
+                        Fast Delivery
+                    </h5>
+
+                    <p class="text-muted">
+                        Get your products delivered quickly
+                        and safely.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="feature-box">
+
+                    <div class="feature-icon">
+                        🔒
+                    </div>
+
+                    <h5 class="mt-3">
+                        Secure Shopping
+                    </h5>
+
+                    <p class="text-muted">
+                        Shop comfortably with our trusted
+                        platform.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="feature-box">
+
+                    <div class="feature-icon">
+                        ⭐
+                    </div>
+
+                    <h5 class="mt-3">
+                        Quality Products
+                    </h5>
+
+                    <p class="text-muted">
+                        Browse products selected for quality
+                        and value.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     PRODUCTS SECTION
+========================= -->
+
+<section
+    id="products"
+    class="py-5"
+>
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <span class="badge bg-dark mb-2">
+                Our Collection
+            </span>
+
+            <h2 class="fw-bold">
+                Featured Products
+            </h2>
+
+            <p class="text-muted">
+                Check out some of our popular products.
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+
+            <!-- PRODUCT 1 -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="card product-card h-100 shadow-sm">
+
+                    <div class="product-image laptop-image">
+
+                        💻
+
+                    </div>
+
+
+                    <div class="card-body d-flex flex-column">
+
+                        <span class="badge bg-secondary align-self-start">
+                            Electronics
+                        </span>
+
+
+                        <h4 class="card-title mt-3">
+                            Laptop Pro
+                        </h4>
+
+
+                        <p class="card-text text-muted">
+
+                            High-performance laptop suitable
+                            for work, development, and entertainment.
+
+                        </p>
+
+
+                        <div class="mt-auto">
+
+                            <h5 class="fw-bold">
+                                ₹45,999
+                            </h5>
+
+
+                            <button
+                                class="btn btn-dark w-100 mt-2"
+                            >
+                                View Product
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PRODUCT 2 -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="card product-card h-100 shadow-sm">
+
+                    <div class="product-image headset-image">
+
+                        🎧
+
+                    </div>
+
+
+                    <div class="card-body d-flex flex-column">
+
+                        <span class="badge bg-secondary align-self-start">
+                            Audio
+                        </span>
+
+
+                        <h4 class="card-title mt-3">
+                            Gaming Headset
+                        </h4>
+
+
+                        <p class="card-text text-muted">
+
+                            Immersive audio experience with
+                            comfortable over-ear design.
+
+                        </p>
+
+
+                        <div class="mt-auto">
+
+                            <h5 class="fw-bold">
+                                ₹2,499
+                            </h5>
+
+
+                            <button
+                                class="btn btn-dark w-100 mt-2"
+                            >
+                                View Product
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PRODUCT 3 -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="card product-card h-100 shadow-sm">
+
+                    <div class="product-image keyboard-image">
+
+                        ⌨️
+
+                    </div>
+
+
+                    <div class="card-body d-flex flex-column">
+
+                        <span class="badge bg-secondary align-self-start">
+                            Accessories
+                        </span>
+
+
+                        <h4 class="card-title mt-3">
+                            Mechanical Keyboard
+                        </h4>
+
+
+                        <p class="card-text text-muted">
+
+                            Responsive mechanical switches
+                            designed for everyday productivity.
+
+                        </p>
+
+
+                        <div class="mt-auto">
+
+                            <h5 class="fw-bold">
+                                ₹1,999
+                            </h5>
+
+
+                            <a
+    href="/product?id=1"
+    class="btn btn-dark w-100 mt-2"
+>
+    View Product
+</a>
+
+<a
+    href="/product?id=2"
+    class="btn btn-dark w-100 mt-2"
+>
+    View Product
+</a>
+
+<a
+    href="/product?id=3"
+    class="btn btn-dark w-100 mt-2"
+>
+    View Product
+</a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     CALL TO ACTION
+========================= -->
+
+<section class="cta-section py-5">
+
+    <div class="container text-center">
+
+        <h2 class="fw-bold">
+            Ready to start shopping?
+        </h2>
+
+
+        <p class="lead">
+            Create your VulnShop account today.
+        </p>
+
+
+        <a
+            href="{{ url_for('register') }}"
+            class="btn btn-light btn-lg"
+        >
+            Create Account
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     ABOUT SECTION
+========================= -->
+
+<section
+    id="about"
+    class="py-5 bg-white"
+>
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <div class="col-md-6">
+
+                <span class="badge bg-primary mb-3">
+                    About VulnShop
+                </span>
+
+
+                <h2 class="fw-bold">
+                    A simple shopping experience.
+                </h2>
+
+
+                <p class="text-muted mt-3">
+
+                    VulnShop is a demonstration e-commerce
+                    platform designed to provide a realistic
+                    online shopping experience.
+
+                </p>
+
+
+                <p class="text-muted">
+
+                    Browse products, create an account,
+                    manage your profile, and explore the
+                    platform.
+
+                </p>
+
+            </div>
+
+
+            <div class="col-md-6 text-center">
+
+                <div class="about-icon">
+                    🛒
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer class="bg-dark text-white py-4">
+
+    <div class="container">
+
+        <div class="row">
+
+
+            <div class="col-md-6">
+
+                <h5 class="fw-bold">
+                    🛒 VulnShop
+                </h5>
+
+                <p class="text-secondary mb-0">
+
+                    Your everyday online shopping platform.
+
+                </p>
+
+            </div>
+
+
+            <div class="col-md-6 text-md-end mt-3 mt-md-0">
+
+                <p class="text-secondary mb-0">
+
+                    © 2026 VulnShop
+
+                </p>
+
+                <small class="text-secondary">
+
+                    Security Training Application
+
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- Bootstrap JavaScript -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+
+<!-- Custom JavaScript -->
+
+<script
+    src="{{ url_for('static', filename='js/script.js') }}">
+</script>
+
+
+</body>
+
+</html>
